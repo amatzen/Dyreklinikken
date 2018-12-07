@@ -9,11 +9,11 @@ Mads Kristian Key Høgh Christensen
 Alexander Bundgaard Matzen
 
 ### Team
-Alexander Bundgaard Matzen
-Mads Kristian Key Høgh Christensen
-Mike Jensen	Al-Towaiji
-Nikolaj Lindgaard Merrild	Langberg
-
+Alexander Bundgaard Matzen  
+Mads Kristian Key Høgh Christensen  
+Mike Jensen	Al-Towaiji  
+Nikolaj Lindgaard Merrild	Langberg  
+  
 ## MySQL detaljer
 Host: infrequent.dk  
 Username: mgx_dyrek  
