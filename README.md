@@ -15,7 +15,7 @@ Mike Jensen	Al-Towaiji
 Nikolaj Lindgaard Merrild	Langberg
 
 ## MySQL detaljer
-Host: infrequent.dk
-Username: mgx_dyreklinikken
-Password: Ci50oh~8
-Database: mgx_dyreklinikken
+Host: infrequent.dk  
+Username: mgx_dyrek  
+Password: Ci50oh~8  
+Database: mgx_dyreklinikken  
