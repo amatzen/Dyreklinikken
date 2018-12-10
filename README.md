@@ -14,7 +14,7 @@ Mads Kristian Key Høgh Christensen
 Mike Jensen	Al-Towaiji  
 Nikolaj Lindgaard Merrild	Langberg  
   
-## MySQL detaljer
+## MySQL detaljer / MariaDB
 Host: infrequent.dk  
 Username: mgx_dyrek  
 Password: Ci50oh~8  
