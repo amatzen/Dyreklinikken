@@ -24,13 +24,7 @@ session_start();
     <body>
 
     <div id="hero">
-        <div class="container-fluid jumbotron pt-5 pb-5 bg-primary text-white nc">
-            <div class="row">
-                <div class="col-md-12">
-                    
-                </div>
-            </div>
-        </div>
+
     </div>
 
 
