@@ -24,7 +24,7 @@ session_start();
     <body>
 
     <div id="hero">
-        <div class="container-fluid jumbotron pt-5 pb-5 bg-primary text-white">
+        <div class="container-fluid jumbotron pt-5 pb-5 bg-primary text-white nc">
 
             <h1>Dyreklinikken</h1>
 
