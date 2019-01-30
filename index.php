@@ -23,11 +23,10 @@ session_start();
     </head>
     <body>
 
-    <div id="hero">
-
-    </div>
+    <?php require_once 'header.php'; ?>
 
 
+    <?php require_once 'footer.php'; ?>
 
     </body>
 </html>
