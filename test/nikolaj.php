@@ -8,7 +8,7 @@ session_start();
     Test Nikolaj
 </title>
     <head>
-   Hello World2
+   Hello World
 
     </head>
     <body>
