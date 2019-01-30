@@ -1,12 +1,12 @@
 <?php
 session_name('_sid');
 session_start();
-echo "Hello World"
 ?>
 <!doctype html>
 <html lang="da">
     <head>
-   
+   Hello World2
+
     </head>
     <body>
 
