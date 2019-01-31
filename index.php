@@ -1,6 +1,7 @@
 <?php
 session_name('_sid');
 session_start();
+require_once 'mysql.php';
 ?>
 <!doctype html>
 <html lang="da">
