@@ -1,0 +1,31 @@
+footer {
+    background:#f7f7f7;
+}
+.footer-copyright {
+    font-size: 10px;
+}
+a:hover, a:visited {
+    color: #000;
+}
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+.links li {
+    margin-bottom: 2px; 
+}
+
+a {
+    color: #fd2a30;
+}
+.overskrift {
+    font-size: 21px;
+}
+
