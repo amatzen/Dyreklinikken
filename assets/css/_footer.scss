@@ -83,3 +83,8 @@ $base-color: #fd2a30;
         text-align: center!important;
     }
 }
+@media screen and (max-width: 640px) {
+    .emergency {
+        display: none;
+    }
+}
