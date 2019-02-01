@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container text-center text-md-left">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-3 mx-auto">
                         <img class="mt-3" height="50" src="https://i.imgur.com/Odwm52p.png">
@@ -69,15 +69,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-3 emergency">
-                <h2>Akut?</h2>
-                <span class="emergency-text">
-                    Ring til vores hotline:
-                    <p class="emergency-phone">
-                        +45 71 71 71 71
-                    </p>
-                </span>
+            <div class="col-md-3">
+                <div class="emergency">
+                    <h2>Akut?</h2>
+                    <span class="emergency-text">
+                        Ring til vores hotline:
+                        <p class="emergency-phone">
+                            +45 71 71 71 71
+                        </p>
+                    </span>
+                </div>
             </div>
         </div>
 
