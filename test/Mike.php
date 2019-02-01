@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 session_name('_sid');
 session_start();
 ?>
@@ -36,7 +36,7 @@ session_start();
               <a >Hospitalsgade 26</a>
             </li>
             <li>
-              <a >2400 København V,</a>
+              <a >2400 KÃ¸benhavn V,</a>
             </li>
             <li>
               <a >Danmark</a>
@@ -104,7 +104,7 @@ session_start();
         </div>
 
 		<div class="col">
-				   <div class="right footer-copyright footer-vilkaar py-3"><a href="#!">Servicevilkår</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#!">Privatlivspolitik</a> </div>
+				   <div class="right footer-copyright footer-vilkaar py-3"><a href="#!">ServicevilkÃ¥r</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#!">Privatlivspolitik</a> </div>
 				   <div class="left footer-copyright py-3">&copy; <?= date("Y") ?> Dyreklinikken A/S - Alle rettigheder forbeholdt
 
 	</div>
