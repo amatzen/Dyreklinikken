@@ -64,6 +64,8 @@
   background: #fd2a30;
   color: white;
   padding: 3rem;
+  height: 100%;
+  width: 100%;
 }
 
 .footer .emergency h2 {
