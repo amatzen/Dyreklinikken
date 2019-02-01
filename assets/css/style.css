@@ -91,6 +91,21 @@
           box-sizing: border-box;
 }
 
+*::-moz-selection {
+  background: #fd2a30;
+  color: #fff;
+}
+
+*::selection {
+  background: #fd2a30;
+  color: #fff;
+}
+
+*::-moz-selection {
+  background: #fd2a30;
+  color: #fff;
+}
+
 html, body {
   margin: 0;
   padding: 0;
