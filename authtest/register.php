@@ -19,14 +19,16 @@ if(!isset($_POST['phone']) OR !isset($_POST['password']) OR !isset($_POST['name'
 
 $name = $db->real_escape_string($_POST['name']);
 $phone = $db->real_escape_string($_POST['phone']);
-$email = $db->real_escape_string($_POST['email']);
+$email = $db->real_escape_string(strtolower(htmlentities($_POST['email'])));
 $address = $db->real_escape_string($_POST['address']);
-$p = hash(
-    'sha256',
-    $db->real_escape_string($_POST['password'])
+$p = $db->real_escape_string(
+    hash(
+        'sha256',
+        $_POST['password']
+    )
 );
 
-$db->query("INSERT INTO users (name, phone, email, password, address) VALUES ($name, $phone, $email, $p, $address)") or die($db->error);
+$db->query("INSERT INTO `users` (`name`, `phone`, `email`, `password`, `address`) VALUES ('$name', '$phone', '$email', '$p', '$address')") or die($db->error);
 
 echo 'Konto oprettet';
 
