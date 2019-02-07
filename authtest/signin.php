@@ -27,9 +27,8 @@ $q = $db->query("SELECT * FROM users WHERE `phone` = '$n' AND `password` = '$p' 
 print_r($q->num_rows);
 print_r($q->fetch_assoc());
 
-die();
-if ($q->num_rows == 1){
-    $_SESSION['signedIn'] = true;
+if ( $q->num_rows == 1 ){
+    $_SESSION['signedIn'] = $->fetch_assoc()[name];
     $_SESSION['name'] = $q->fetch_assoc()[name];
     $_SESSION['phone'] = $q->fetch_assoc()[phone];
     $_SESSION['email'] = $q->fetch_assoc()[email];
