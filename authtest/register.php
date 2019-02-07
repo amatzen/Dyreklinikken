@@ -29,7 +29,7 @@ if($q === TRUE){
     echo 'Konto oprettet';
 
 }else {
-    echo ' Der skete en fejl.'
+    echo ' Der skete en fejl.';
 }
 
 
