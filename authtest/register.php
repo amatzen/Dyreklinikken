@@ -23,7 +23,7 @@ $p = hash(
     $db->real_escape_string($_POST['password'])
 );
 
-$q = $db->query("INSERT INTO users (`name`, `phone`, `email`, `password`, `address`) VALUES ($name, $n, $email, $p, $adress)");
+$q = $db->query("INSERT INTO users (`name`, `phone`, `email`, `password`, `address`) VALUES ($name, $n, $email, $p, $address)");
 
 if($q === TRUE){
     echo 'Konto oprettet';
