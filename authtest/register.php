@@ -26,16 +26,8 @@ $p = hash(
     $db->real_escape_string($_POST['password'])
 );
 
-$q = $db->query("INSERT INTO users (name, phone, email, password, address)
-                VALUES ($name, $phone, $email, $p, $address)");
+$db->query("INSERT INTO users (name, phone, email, password, address) VALUES ($name, $phone, $email, $p, $address)") or die($db->error);
 
-if($q){
-    echo 'Konto oprettet';
-
-}else {
-    echo ' Der skete en fejl.';
-    echo $q->error;
-}
-
+echo 'Konto oprettet';
 
 header("Refresh: 2;index.php");
