@@ -15,12 +15,19 @@ if(!isset($_POST['phone']) OR !isset($_POST['password'])) {
 }
 
 $n = $db->real_escape_string($_POST['phone']);
-$p = hash(
-    'sha256',
-    $db->real_escape_string($_POST['password'])
+$p = $db->real_escape_string(
+    hash(
+        'sha256',
+        $_POST['password']
+    )
 );
 
-$q = $db->query("SELECT * FROM users WHERE phone = '$n' AND password = '$p' LIMIT 1");
+$q = $db->query("SELECT * FROM users WHERE `phone` = '$n' AND `password` = '$p' LIMIT 1");
+
+print_r($q->num_rows);
+print_r($q->fetch_assoc());
+
+die();
 if ($q->num_rows == 1){
     $_SESSION['signedIn'] = true;
     $_SESSION['name'] = $q->fetch_assoc()[name];
