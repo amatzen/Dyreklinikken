@@ -32,8 +32,8 @@ if($db->connect_error){
     Hej, du er ikke logget ind.
     <br>
     <form action="signin.php" method="post">
-        <input type="signin_number" name="phone" id="phone" placeholder="Telefonnummer"><br>
-        <input type="signin_password" name="password" id="password" placeholder="Adgangskode"><br>
+        <input type="number" name="phone" id="phone" placeholder="Telefonnummer"><br>
+        <input type="password" name="password" id="password" placeholder="Adgangskode"><br>
         <input type="submit" value="Log ind">
     </form>
     <br><br>
