@@ -2,6 +2,9 @@
 session_name('mtzn.auth-test');
 session_start();
 
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+
 $db = new mysqli("iqu.dk", "mgx_dyrek", "Ci50oh~8", "mgx_dyreklinikken");
 
 if($db->connect_error){
