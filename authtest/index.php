@@ -42,7 +42,7 @@ if($db->connect_error){
         <input type="password" name="password" id="password" placeholder="Adgangskode"><br>
         <input type="text" name="name" id="name" placeholder="Navn"><br>
         <input type="address" name="address" id="address" placeholder="Adresse"><br>
-        <input type="email" name="email" id="email" placeholder="Adresse"><br>
+        <input type="email" name="email" id="email" placeholder="Email"><br>
         <input type="submit" value="Register">
     </form>
 
