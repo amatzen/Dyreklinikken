@@ -9,7 +9,7 @@ if($db->connect_error){
 }
 
 
-if(!isset($_POST['name']) OR !isset($_POST['password'])) {
+if(!isset($_POST['phone']) OR !isset($_POST['password'])) {
     header("Refresh:2;index.php");
     die("Noget mangler.");
 }
