@@ -15,7 +15,7 @@ if(!isset($_POST['phone']) OR !isset($_POST['password']) OR !isset($_POST['name'
 }
 
 $name = $db->real_escape_string($_POST['name']);
-$n = $db->real_escape_string($_POST['phone']);
+$phone = $db->real_escape_string($_POST['phone']);
 $email = $db->real_escape_string($_POST['email']);
 $address = $db->real_escape_string($_POST['address']);
 $p = hash(
@@ -23,13 +23,14 @@ $p = hash(
     $db->real_escape_string($_POST['password'])
 );
 
-$q = $db->query("INSERT INTO users (`name`, `phone`, `email`, `password`, `address`) VALUES ($name, $n, $email, $p, $address)");
+$q = $db->query("INSERT INTO users (`name`, `phone`, `email`, `password`, `address`) VALUES ($name, $phone, $email, $p, $address)");
 
-if($q === TRUE){
+if($q){
     echo 'Konto oprettet';
 
 }else {
     echo ' Der skete en fejl.';
+    echo $q->error;
 }
 
 
