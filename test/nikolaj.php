@@ -9,7 +9,9 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
   <img class="mt-3" height="45" src="https://i.imgur.com/Odwm52p.png">
+
   <a class="navbar-brand" href="#">Dyreklinikken</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
