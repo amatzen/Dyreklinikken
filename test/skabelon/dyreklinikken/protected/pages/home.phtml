@@ -1,0 +1,72 @@
+<?php if(!isset($exe)) die("<b>Error!</b> This page should run through the router."); ?>
+<!DOCTYPE html>
+<html lang="da">
+<?php tpl('head', 'Forside'); ?>
+<body>
+    <?php tpl('header'); ?>
+    <section class="hero">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>
+                            Min side
+                        </h1>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <aside class="">
+                            
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features mb-5">
+
+    </section>
+    <article>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 content">
+
+                        <div class="mb-6-5">
+                            <h2>
+                                Mine kæledyr
+                            </h2>
+                          
+                        </div>
+                       
+<div class="boxed">Both divs are the same size now!</div>
+<div class="boxed">Both divs are the same size now!</div>
+                    </div>
+                    <div class="col-md-3 sidebar">
+                        <div class="mb-5">
+                            <h2>Facebook</h2>
+                            <div
+                                class="fb-page" 
+                                data-href="https://www.facebook.com/facebook"
+                                data-hide-cover="false"
+                                data-show-facepile="true">
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <h2>Seneste nyheder</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/da_dk/sdk.js#xfbml=1&version=v3.2&appId=251730689074894&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>
