@@ -1,3 +1,5 @@
+<?php require 'nikolaj_server_connection.php'; ?>
+
 <html lang="da">
 <head>
 
