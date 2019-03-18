@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $servername = "infrequent.dk";
 $username = "mgx_dyrek";
 $password = "Ci50oh~8";
