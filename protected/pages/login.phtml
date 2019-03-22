@@ -1,0 +1,110 @@
+<?php if(!isset($exe)) die("<b>Error!</b> This page should run through the router."); ?>
+<?php
+$db = new mysqli("infrequent.dk", "mgx_dyrek", "Ci50oh~8", "mgx_dyreklinikken");
+
+if($db->connect_error){
+    die("Database fejl.");
+}
+
+if(isset($_COOKIE['LoginErr'])){
+    $loginErr = $_COOKIE['LoginErr'];
+    setcookie('LoginErr','', time() - 36000);
+}
+
+if($_SERVER['REQUEST_METHOD'] == "POST"):
+
+    if(!isset($_POST['phone']) || !isset($_POST['password'])) {
+        setcookie('LoginErr', 'Udfyld venligst alle felter.', time() + 3600);
+        header("Location: logind");
+        die();
+    }
+
+    $phone = $db->real_escape_string($_POST['phone']);
+    $password = hash('sha256',$db->real_escape_string($_POST['password']));
+
+    $query = $db->query("SELECT * FROM users WHERE `phone`='$phone' AND `password`='$password' LIMIT 1");
+    if($query->num_rows != 1){
+        setcookie('LoginErr', 'Forkert telefonnummer eller kodeord.', time() + 3600);
+        header("Location: logind");
+        die();
+    }
+
+    $userinfo = $query->fetch_assoc();
+    $_SESSION['SignedIn'] = true;
+    $_SESSION['id'] = $userinfo['id'];
+    $_SESSION['phone'] = $userinfo['phone'];
+    $_SESSION['name'] = $userinfo['name'];
+    $_SESSION['email'] = $userinfo['email'];
+
+    header("Location: min-side");
+
+
+endif;
+
+?>
+<!DOCTYPE html>
+<html lang="da">
+<?php tpl('head', 'Forside'); ?>
+<body>
+    <?php tpl('header'); ?>
+    <section class="hero mb-3">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>
+                            Log ind
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <article>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 content pt-5">
+                        <h2>Log ind</h2>
+
+                        <?php if(isset($loginErr)): ?>
+                            <div class="alert">
+                                <?= $loginErr ?>
+                            </div>
+                            <br><br>
+                        <?php endif ?>
+
+                        <form method="post">
+                            <input type="phone" placeholder="Telefonnummer" name="phone" id="phone" class="input" required><br><br>
+                            <input type="password" placeholder="Adgangskode" name="password" id="password" class="input" required>
+                            <br><br>
+                            <input type="submit" class="btn-primary" value="Log ind">
+                        </form>
+
+                        <br><br>
+
+                        <h2>Opret bruger</h2>
+                        <p>For oprettelse af bruger, skal du være kunde i en Dyreklinik. Venligst henvend dig til den nærmeste dyreklinik for at blive oprettet.</p>
+
+
+
+                    </div>
+                    <div class="col-md-3 sidebar">
+                        <?php tpl('sidebar'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <?php tpl('footer'); ?>
+
+    <script async>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/da_dk/sdk.js#xfbml=1&version=v3.2&appId=251730689074894&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

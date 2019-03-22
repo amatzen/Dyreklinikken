@@ -1,0 +1,131 @@
+<?php if(!isset($exe)) die("<b>Error!</b> This page should run through the router."); ?>
+<?php
+    $db = new mysqli("infrequent.dk", "mgx_dyrek", base64_decode(hex2bin('51326b314d47396f666a673d')), "mgx_dyreklinikken");
+
+    if($db->connect_error){
+        die("Database fejl.");
+    }
+
+    if(!isset($_SESSION['SignedIn'])){
+        header("Location: logind"); die();
+
+    }
+
+    $id = $_SESSION['id'];
+
+    $userinfo = ($db->query("SELECT * FROM users WHERE id='$id' LIMIT 1"))->fetch_assoc();
+
+?>
+<!DOCTYPE html>
+<html lang="da">
+<?php tpl('head', 'Min side'); ?>
+<body>
+    <?php tpl('header'); ?>
+    <section class="hero">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>
+                            Min side
+                        </h1>
+                        <p class="lead">Brugerprofil for <?= $_SESSION['name'] ?></p>
+                    </div>
+                    <div class="col-md-4">
+                        <aside class="">
+                            
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="breadcrumbs mb-5">
+        <div class="container">
+            Du er her:  
+            <ul>
+                <li><a href="/min-side">Min side</a></li>
+            </ul>
+        </div>
+    </section>
+    <article>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 content">
+                        <h2>Mine kæledyr</h2>
+                        <div id="animals">
+                            <img src='assets/img/ajax-loader.gif' alt='Loading...'>   Loading...
+                        </div>
+
+                        <br><br><br><br>
+
+                        <h2>Mine personoplysninger</h2>
+                        <form action="" method="post">
+                            <div class="mb-4">
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label for="email">Email</label><br><br>
+                                            <input type="email" id="email" value="<?= $userinfo['email'] ?>" class="input" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label for="phone">Telefonnummer</label><br><br>
+                                            <input type="phone" id="phone" value="<?= $userinfo['phone'] ?>" class="input" placeholder="Telefonnummer">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label for="name">Navn</label><br><br>
+                                            <input type="name" id="name" value="<?= $userinfo['name'] ?>" class="input" placeholder="Navn">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label for="address">Adresse</label><br><br>
+                                            <input type="address" id="address" value="<?= $userinfo['address'] ?>" class="input" placeholder="Adresse">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Opdatér" class="btn-primary"> <a href="/logud" class="btn-secondary" style="margin-left: 1rem;">Log ud</a>
+                        </form>
+
+
+                    </div>
+                    <div class="col-md-3 sidebar">
+                        <?php tpl('sidebar'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <?php tpl('footer'); ?>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', '/ajax/getAnimalsByUser?user=<?= $_SESSION['id'] ?>', true);
+
+        xhr.onload = function () {
+            document.getElementById('animals').innerHTML = xhr.responseText;
+        };
+
+        xhr.send();
+
+
+    </script>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/da_dk/sdk.js#xfbml=1&version=v3.2&appId=251730689074894&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

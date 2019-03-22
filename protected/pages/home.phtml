@@ -1,0 +1,85 @@
+<?php if(!isset($exe)) die("<b>Error!</b> This page should run through the router."); ?>
+<!DOCTYPE html>
+<html lang="da">
+<?php tpl('head', 'Forside'); ?>
+<body>
+    <?php tpl('header'); ?>
+    <section class="hero">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>
+                            Vi skaber tryghed
+                        </h1>
+                        <p class="lead">
+                            Som Danmarks største kæde af dyreklinikker, sikrer vi tryghed for mere end 250.000 danske kæledyr og deres ejere.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <aside class="">
+                            
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features mb-5">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <span class="feature"><img src="assets/img/map-pin.svg" alt="" class="feature-icon"> <span class="feature-text">Vi er placeret over hele landet</span></span>
+                        <span class="feature"><img src="assets/img/phone.svg" alt="" class="feature-icon"> <span class="feature-text">24/7 Hotline</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <article>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 content">
+
+                        <div class="mb-6-5">
+                            <h2>
+                                Mit kæledyr skal til dyrlægen &ndash; hvad gør jeg?
+                            </h2>
+                            <p>
+                                Du kan bestille en tid ved at kontakte os direkte på tlf. <a href="tel:004544227300" target="_blank" title="Telefonnummer">44 22 73 00</a> i hverdage mellem kl. 09.00-15.00 eller via mail: <a href="mailto:info@dyreklinikken.dk" target="_blank" title="Mail">info@dyreklinikken.dk</a>.
+                            </p>
+                            <p>
+                                NB: I tilfælde af afbud udenfor telefontid henvises til <a href="mailto:afbud@dyreklinikken.dk"  target="_blank" title="Dyreklinikken.dk">afbud@dyreklinikken.dk</a>.
+                            </p>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <h2>
+                                Hvem er vi?
+                            </h2>
+                            <p class="text-muted">
+                                Klik på en profil for at læse mere
+                            </p>
+                            
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 sidebar">
+                        <?php tpl('sidebar'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/da_dk/sdk.js#xfbml=1&version=v3.2&appId=251730689074894&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

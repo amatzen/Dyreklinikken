@@ -1,0 +1,135 @@
+<?php if(!isset($exe)) die("<b>Error!</b> This page should run through the router."); ?>
+<?php
+    setlocale(LC_TIME, 'da_DK');
+
+    $db = new mysqli("infrequent.dk", "mgx_dyrek", base64_decode(hex2bin('51326b314d47396f666a673d')), "mgx_dyreklinikken");
+
+    if($db->connect_error){
+        die("Database fejl.");
+    }
+
+    if(!isset($_SESSION['SignedIn'])){
+        header("Location: logind"); die();
+
+    }
+
+    $id = $_SESSION['id'];
+
+    $userinfo = ($db->query("SELECT * FROM users WHERE id='$id' LIMIT 1"))->fetch_assoc();
+
+    if(!isset($_GET['animal'])){
+        page('404');
+        die();
+    }
+    $q = $_GET['animal'];
+
+    $animalquery = $db->query("SELECT * FROM animals WHERE id = '$q' AND owner = '$id'");
+
+    if($animalquery->num_rows != 1) {
+        page('404');
+        die();
+    }
+
+    $animalinfo = $animalquery->fetch_assoc();
+
+    $animalName = $animalinfo['name'];
+
+?>
+<!DOCTYPE html>
+<html lang="da">
+<?php tpl('head', $animalName.' | Journal'); ?>
+<body>
+    <?php tpl('header'); ?>
+    <section class="hero" <?php if(isset($animalinfo['image'])): ?>style="background-image:linear-gradient(rgba(230,230,230,.9),rgba(230,230,230,.75)),url('<?= $animalinfo['image'] ?>');background-size:cover;background-position: center center;"<?php endif ?>>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>
+                            Journal
+                        </h1>
+                        <p class="lead">Dyrejournal for <?= $animalName ?></p>
+                    </div>
+                    <div class="col-md-4">
+                        <aside class="">
+                            
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="breadcrumbs mb-5">
+        <div class="container">
+            Du er her:  
+            <ul>
+                <li><a href="/min-side">Min side</a></li>
+                <li><a href="#">Journal</a></li>
+            </ul>
+        </div>
+    </section>
+    <article>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 content">
+                        <h2>Stamdata</h2>
+                        <div class="table-responsive">
+                            <table class="animal-meta">
+                                <tr>
+                                    <th>Art</th>
+                                    <th>Race</th>
+                                    <th>Alder</th>
+                                    <th>Fødselsdagsdato</th>
+                                    <th>Vægt</th>
+                                </tr>
+                                <tr>
+                                    <td><?= $animalinfo['species'] ?></td>
+                                    <td><?= $animalinfo['race'] ?></td>
+                                    <td><?= (new DateTime($animalinfo['birthday']))->diff(new DateTime())->y ?> år</td>
+                                    <td><?= strtolower((new DateTime($animalinfo['birthday']))->format('j.m.Y')) ?></td>
+                                    <td><?= $animalinfo['weight'] ?> kg</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <br><br>
+                        <h2>Historik</h2>
+                        <div id="animallog">
+                            <img src='assets/img/ajax-loader.gif' alt='Loading...'>   Loading...
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-3 sidebar">
+                        <?php tpl('sidebar'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <?php tpl('footer'); ?>
+
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', '/ajax/getLogByAnimal?animal=<?= $animalinfo['id'] ?>', true);
+
+        xhr.onload = function () {
+            document.getElementById('animallog').innerHTML = xhr.responseText;
+        };
+
+        xhr.send();
+
+
+    </script>
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/da_dk/sdk.js#xfbml=1&version=v3.2&appId=251730689074894&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>
