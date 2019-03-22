@@ -28,8 +28,8 @@
     <div class="alert">Ingen dyr fundet.</div>
     <?php else: ?>
 
-    // Hvis der er dyr, der tilhører brugeren
-    <?php while($animal = $animals->fetch_assoc()): ?>
+    <?php //Hvis der er dyr, der tilhører brugeren
+    while($animal = $animals->fetch_assoc()): ?>
 
     <!-- Ny boks, der har billede af dyret, hvis der er et billede tilknyttet. -->
     <div class="animal" <?php if(isset($animal['image'])): ?>style="background-image:linear-gradient(rgba(255,255,255,.85),rgba(230,230,230,.75)),url('<?= $animal['image'] ?>');background-size:cover;background-position: center center;"<?php endif ?>>
