@@ -1,0 +1,70 @@
+<?php if(!isset($exe)) die("<b>Error!</b> This page should run through the router."); ?>
+<!DOCTYPE html>
+<html lang="da">
+<?php tpl('head', 'Priser'); ?>
+<body>
+    <?php tpl('header'); ?>
+    <section class="hero">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>
+                            Vores priser
+                        </h1>
+                    </div>
+                    <div class="col-md-4">
+                        <aside class="">
+                            
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features mb-5">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <span class="feature"><img src="assets/img/map-pin.svg" alt="" class="feature-icon"> <span class="feature-text">Vi er placeret over hele landet</span></span>
+                        <span class="feature"><img src="assets/img/phone.svg" alt="" class="feature-icon"> <span class="feature-text">24/7 Hotline</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <article>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 content">
+
+                        <div class="mb-6-5">
+                            <h2>
+                                Priser
+                            </h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio vero voluptas quasi optio vel omnis voluptatum necessitatibus nobis veritatis? Sed ducimus in doloribus, veniam illum repellendus pariatur architecto optio itaque!
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 sidebar">
+                        <?php tpl('sidebar'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <?php tpl('footer'); ?>
+
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/da_dk/sdk.js#xfbml=1&version=v3.2&appId=251730689074894&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>

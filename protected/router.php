@@ -5,7 +5,11 @@ switch ($req):
     case "/":
         page('home');
         break;
-
+    
+    case "/priser":
+        page('prices');
+        break;
+        
     case "/logind":
         page('login');
         break;
