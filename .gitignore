@@ -3,3 +3,4 @@
 test/*
 test/Mike.php
 assets/css/style.css.map
+vendor/
