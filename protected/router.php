@@ -28,6 +28,10 @@ switch ($req):
         header("Location: /");
         break;
 
+    case "/form/user/update":
+        page('user.update.action');
+        break;
+
     // Ajax
     case "/ajax/getAnimalsByUser":
         ajax('getAnimalsByUser');

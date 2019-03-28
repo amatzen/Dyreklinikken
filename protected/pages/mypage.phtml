@@ -61,19 +61,19 @@
                         <br><br><br><br>
 
                         <h2>Mine personoplysninger</h2>
-                        <form action="" method="post">
+                        <form action="form/user/update" method="post">
                             <div class="mb-4">
                                 <div class="row mb-4">
                                     <div class="col-md-6">
                                         <div>
                                             <label for="email">Email</label><br><br>
-                                            <input type="email" id="email" value="<?= $userinfo['email'] ?>" class="input" placeholder="Email">
+                                            <input type="email" id="email" name="email" value="<?= $userinfo['email'] ?>" class="input" placeholder="Email">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div>
                                             <label for="phone">Telefonnummer</label><br><br>
-                                            <input type="phone" id="phone" value="<?= $userinfo['phone'] ?>" class="input" placeholder="Telefonnummer">
+                                            <input type="phone" id="phone" name="phone" value="<?= $userinfo['phone'] ?>" class="input" placeholder="Telefonnummer">
                                         </div>
                                     </div>
                                 </div>
@@ -81,13 +81,13 @@
                                     <div class="col-md-6">
                                         <div>
                                             <label for="name">Navn</label><br><br>
-                                            <input type="name" id="name" value="<?= $userinfo['name'] ?>" class="input" placeholder="Navn">
+                                            <input type="name" id="name" name="name" value="<?= $userinfo['name'] ?>" class="input" placeholder="Navn">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div>
                                             <label for="address">Adresse</label><br><br>
-                                            <input type="address" id="address" value="<?= $userinfo['address'] ?>" class="input" placeholder="Adresse">
+                                            <input type="address" id="address" name="address" value="<?= $userinfo['address'] ?>" class="input" placeholder="Adresse">
                                         </div>
                                     </div>
                                 </div>

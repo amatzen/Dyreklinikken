@@ -1,0 +1,30 @@
+<?php if(!isset($exe)) die("<b>Error!</b> This page should run through the router.");
+
+$db = new mysqli("iqu.dk", "mgx_dyrek", "Ci50oh~8", "mgx_dyreklinikken");
+
+if($db->connect_error){
+    die("Failed establishment of database connection.");
+}
+
+if(!isset($_SESSION['SignedIn'])){
+    die();
+}
+
+$phone = $_SESSION['phone'];
+$email = $_SESSION['email'];
+
+$findUserQuery = $db->query("SELECT * FROM users WHERE phone = '$phone' AND email = '$email'");
+
+if($findUserQuery->num_rows != 1){
+    header("Location: https://dyreklinikken.mgx.dk/min-side");
+    die();
+}
+
+$newName  = $db->real_escape_string($_POST['name']);
+$newPhone = $db->real_escape_string($_POST['phone']);
+$newEmail = $db->real_escape_string($_POST['email']);
+$newAddress = $db->real_escape_string($_POST['address']);
+
+$db->query("UPDATE users SET name='$newName',phone='$newPhone',email='$newEmail',address='$newAddress' WHERE phone='$phone' AND email = '$email'");
+
+header("Location: https://dyreklinikken.mgx.dk/logud");
