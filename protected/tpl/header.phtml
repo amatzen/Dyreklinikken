@@ -27,7 +27,7 @@
                                         <a href="/min-side" title="Min side">
                                         <span>
                                             <?php if(isset($_SESSION['SignedIn'])): ?>
-                                                <?= $_SESSION['name'] ?>
+                                                <?= explode(' ', $_SESSION['name'])[0] ?>
                                             <?php else: ?>
                                                 <em>Log ind</em>
                                             <?php endif ?>

@@ -64,7 +64,11 @@ header nav ul li.nav a:hover {
 }
 
 header nav ul li.nav a span {
-  vertical-align: super;
+  vertical-align: middle;
+}
+
+header nav ul li.nav a svg {
+  vertical-align: middle;
 }
 
 .clearfix {
