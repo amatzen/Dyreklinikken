@@ -47,6 +47,10 @@ header nav ul li.nav {
   margin-left: 1.25rem;
 }
 
+header nav ul li.nav-login {
+  margin-left: 1rem;
+}
+
 header nav ul li.nav a {
   display: inline-block;
   vertical-align: middle;
