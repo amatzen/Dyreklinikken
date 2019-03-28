@@ -48,12 +48,13 @@ header nav ul li.nav {
 }
 
 header nav ul li.nav-login {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 header nav ul li.nav a {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: sub;
+  vertical-align: -webkit-baseline-middle;
   text-decoration: none;
   color: #787878;
 }
