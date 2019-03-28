@@ -28,7 +28,7 @@ print_r($q->num_rows);
 print_r($q->fetch_assoc());
 
 if ( $q->num_rows == 1 ){
-    $_SESSION['signedIn'] = $q->fetch_assoc()[name];
+    $_SESSION['SignedIn'] = $q->fetch_assoc()[name];
     $_SESSION['name'] = $q->fetch_assoc()[name];
     $_SESSION['phone'] = $q->fetch_assoc()[phone];
     $_SESSION['email'] = $q->fetch_assoc()[email];

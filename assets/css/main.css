@@ -58,6 +58,10 @@ header nav ul li.nav a:hover {
   color: #ff0d39;
 }
 
+header nav ul li.nav a span {
+  vertical-align: super;
+}
+
 .clearfix {
   overflow: auto;
   clear: both;
