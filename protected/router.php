@@ -32,6 +32,10 @@ switch ($req):
         page('user.update.action');
         break;
 
+    case "/privacy":
+        page('privacypolicy');
+        break;
+
     // Ajax
     case "/ajax/getAnimalsByUser":
         ajax('getAnimalsByUser');

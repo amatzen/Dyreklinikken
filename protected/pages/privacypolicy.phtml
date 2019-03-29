@@ -1,0 +1,75 @@
+<?php if(!isset($exe)) die("<b>Error!</b> This page should run through the router."); ?>
+<!DOCTYPE html>
+<html lang="da">
+<?php tpl('head', 'Privatlivspolitik    '); ?>
+<body>
+    <?php tpl('header'); ?>
+    <section class="hero mb-5">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>
+                            Privatlivspolitik
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <article>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 content">
+
+                        <div class="mb-6-5">
+                            <h2>
+                                Privatlivspolitik
+                            </h2>
+                            <p>
+                            1)<br>
+                            Du er til enhver tid berettiget til at anmode os om oplysning om blandet andet, hvilke oplysninger vi har registreret om dig, hvilket formål registreringen tjener og modtagere af oplysninger der eventuelt måtte være, samt oplysning om hvorfra oplysningerne stammer.
+                            Du har ret til at få udleveret en kopi af de personoplysninger, som vi behandler om dig. Du vil blive bedt om at dokumentere, at du er den du giver dig ud for at være.
+                            <br>
+                            2)<br>
+                            I visse tilfælde har du ret til at få alle eller visse af dine personoplysninger slettet af os, f.eks. hvis du tilbagekalder dit samtykke, og vi ikke har et andet retsgrundlag for at fortsætte behandlingen. Du vil blive bedt om at dokumentere, at du er den du giver dig ud for at være.
+                            <br>
+                            3)<br>
+                            Du har til enhver tid ret til at tilbagekalde et samtykke, du har givet os til en given behandling af personoplysninger, herunder til fremsendelse af nyhedsbreve. Adgangen kan dog være begrænset af hensyn til andre personers privatlivsbeskyttelse, til forretningshemmeligheder og immaterielle rettigheder.
+                            <br>
+                            Ønsker du at benytte dine rettigheder? Skriv til <a href="mailto:dpo@dyreklinikken.mgx.dk">dpo@dyreklinikken.mgx.dk</a>.
+                            </p>
+                            <br>
+                            <h2>Hvordan indsamler Dyreklinikken A/S personoplysninger?</h2>
+                            <p>Vi indsamler personoplysninger på følgende vis:
+                                <br>
+                                <ul>
+                                    <li>Når du vælger at købe og/eller opretter dig via Infrequent Group IVS’ serviceydelser</li>
+                                    <li>Fra personer der handler på dine vegne</li>
+                                    <li>Fra sociale medier</li>
+                                </ul>
+                                <br>
+                                Indsamling af personoplysninger samt behandlingen af disse vil til enhver tid ske i henhold til loven.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 sidebar">
+                        <?php tpl('sidebar'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <?php tpl('footer'); ?>
+
+    <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/da_dk/sdk.js#xfbml=1&version=v3.2&appId=251730689074894&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+</html>
