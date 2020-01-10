@@ -1,6 +1,6 @@
 <?php if(!isset($exe)) die("<b>Error!</b> This page should run through the router."); ?>
 <?php
-$db = new mysqli("infrequent.dk", "mgx_dyrek", "Ci50oh~8", "mgx_dyreklinikken");
+$db = new mysqli("localhost", "mgx_dyrek", base64_decode(hex2bin('11223344')), "mgx_dyreklinikken");
 
 if($db->connect_error){
     die("Database fejl.");
