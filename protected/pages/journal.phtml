@@ -2,7 +2,7 @@
 <?php
     setlocale(LC_TIME, 'da_DK');
 
-    $db = new mysqli("infrequent.dk", "mgx_dyrek", base64_decode(hex2bin('51326b314d47396f666a673d')), "mgx_dyreklinikken");
+    $db = new mysqli("localhost", "mgx_dyrek", base64_decode(hex2bin('11223344')), "mgx_dyreklinikken");
 
     if($db->connect_error){
         die("Database fejl.");
